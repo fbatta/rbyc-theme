@@ -1,0 +1,102 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('../fonts/fontello.eot');
+  src: url('../fonts/fontello.eot#iefix') format('embedded-opentype'),
+       url('../fonts/fontello.woff2') format('woff2'),
+       url('../fonts/fontello.woff') format('woff'),
+       url('../fonts/fontello.ttf') format('truetype'),
+       url('../fonts/fontello.svg#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../fonts/fontello.svg?62812436#fontello') format('svg');
+  }
+}
+*/
+ 
+ [class^="rbyc-icon-"] a::before, [class*=" rbyc-icon-"] a::before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: block;
+  text-decoration: inherit;
+  width: 1em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-bottom: .5rem;
+ 
+  /* you can be more comfortable with increased icons size */
+  font-size: 4rem;
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+/* Add icons in file blocks */
+[class*=" rbyc-icon-"].wp-block-file a::before {
+  display: inline-block;
+  font-size: inherit;
+  margin: 0 5px;
+}
+ 
+.rbyc-icon-calendar a::before { content: '\e800'; } /* '' */
+.rbyc-icon-events a::before { content: '\e801'; } /* '' */
+.rbyc-icon-weather a::before { content: '\e802'; } /* '' */
+.rbyc-icon-book a::before { content: '\e803'; } /* '' */
+.rbyc-icon-committee a::before { content: '\e804'; } /* '' */
+.rbyc-icon-cruising a::before { content: '\e805'; } /* '' */
+.rbyc-icon-sign a::before { content: '\e806'; } /* '' */
+.rbyc-icon-gym a::before { content: '\e807'; } /* '' */
+.rbyc-icon-marina a::before { content: '\e808'; } /* '' */
+.rbyc-icon-training a::before { content: '\e809'; } /* '' */
+.rbyc-icon-boat a::before { content: '\e80a'; } /* '' */
+.rbyc-icon-grass a::before { content: '\e80b'; } /* '' */
+.rbyc-icon-volunteers a::before { content: '\e80c'; } /* '' */
+.rbyc-icon-hardstand a::before { content: '\e80d'; } /* '' */
+.rbyc-icon-etchells a::before { content: '\e80e'; } /* '' */
+.rbyc-icon-dragons a::before { content: '\e80f'; } /* '' */
+.rbyc-icon-buoy a::before { content: '\e810'; } /* '' */
+.rbyc-icon-tower a::before { content: '\e811'; } /* '' */
+.rbyc-icon-beach a::before { content: '\e812'; } /* '' */
+.rbyc-icon-link a::before { content: '\e813'; } /* '' */
+.rbyc-icon-new a::before { content: '\e814'; } /* '' */
+.rbyc-icon-cart a::before { content: '\e815'; } /* '' */
+.rbyc-icon-compass a::before { content: '\e816'; } /* '' */
+.rbyc-icon-tackers a::before { content: '\e817'; } /* '' */
+.rbyc-icon-outthere a::before { content: '\e818'; } /* '' */
+.rbyc-icon-coach a::before { content: '\e819'; } /* '' */
+.rbyc-icon-optimist-silhouette a::before { content: '\e81a'; } /* '' */
+.rbyc-icon-rya a::before { content: '\e81b'; } /* '' */
+.rbyc-icon-rs-boat a::before { content: '\e81c'; } /* '' */
+.rbyc-icon-coronavirus a::before { content: '\e826'; } /* '' */
+.rbyc-icon-policies a::before { content: '\e82b'; } /* '' */
+.rbyc-icon-restaurant a::before { content: '\e832'; } /* '' */
+.rbyc-icon-swimming a::before { content: '\e838'; } /* '' */
+.rbyc-icon-docs a::before { content: '\f0c5'; } /* '' */
+.rbyc-icon-club a::before { content: '\f0f7'; } /* '' */
+.rbyc-icon-racing a::before { content: '\f11e'; } /* '' */
+.rbyc-icon-news a::before { content: '\f1ea'; } /* '' */
+.rbyc-icon-membership a::before { content: '\f2bc'; } /* '' */
+.rbyc-icon-facebook-squared a::before { content: '\f308'; } /* '' */

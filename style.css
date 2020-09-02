@@ -1,0 +1,201 @@
+/*
+Theme Name:     RBYC Twenty Twenty
+Theme URI:      https://rbyc.org.au
+Description:    Twentytwenty child theme.
+Author:         Francesco Battaglini
+Author URI:     francesco@battaglini.net
+Template:       twentytwenty
+Version:        0.1.0.62
+
+
+/* Declare global variables */
+:root {
+    --main-bg-color: #e22658;
+}
+
+/* Enables content like text paragraphs to extend to more of the page */
+.entry-content>*:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide), [class*="__inner-container"] > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
+    max-width: 100rem;
+}
+
+/* Default font face for .entry-content and a bunch of other things */
+.entry-content, .widget_text p, .widget_text ol, .widget_text ul, .widget_text dl, .widget_text dt, .widget-content .rssSummary {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+}
+.widget_text p, .widget_text ol, .widget_text ul, .widget_text dl, .widget_text dt, .widget-content .rssSummary {
+    font-size: .8em;
+}
+
+/* Make text in p elements in .entry-content justified */
+.entry-content p {
+    text-align: justify;
+}
+/* the first text paragraph in entry content needs a bit of padding on top */
+.entry-content > p:nth-of-type(1) {
+    padding-top: 20px;
+}
+/* ...but a few things need to be reset to their normal state */
+.wp-block-guteblock-team-members .wp-block-guteblock-team-member__info {
+    text-align: inherit;
+}
+
+/* Add burgee and crest to the modal menu and the front page title respectively */
+.front-page-entry-title::before {
+    display: block;
+    margin: 0 auto;
+    width: 20%;
+    content: url('assets/svgs/rbyc-crest-color.svg');
+}
+@media (min-width: 768px) {
+    .front-page-entry-title::before {
+        width: 90px;
+    }
+}
+@media (min-width: 1280px) {
+    .front-page-entry-title::before {
+        width: 105px;
+    }
+}
+.close-nav-toggle::before {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 80px;
+    content: url('assets/svgs/rbyc-burgee-color.svg');
+}
+
+/* Style the under-cover menu */
+.under-cover-menu-wrapper {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    background-color: cornsilk;
+}
+ul.under-cover-menu.primary-menu {
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+@media (max-width: 1024px) {
+    .under-cover-menu.primary-menu li {
+        width: 13%;
+    }
+}
+@media (max-width: 425px) {
+    .under-cover-menu.primary-menu li {
+        width: auto;
+    }
+}
+.under-cover-menu.primary-menu a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Further styling of icons */
+.under-cover-menu [class^="rbyc-icon-"] a::before, .under-cover-menu [class*=" rbyc-icon-"] a::before {
+    padding-top: 18px;
+    margin-bottom: 0;
+    width: 100%;
+}
+/* Items with . will get a 'New' icon on the top right */
+.under-cover-menu .rbyc-menu-item-new a::after {
+    font-family: "fontello";
+    font-size: 28px;
+    -webkit-font-smoothing: antialiased;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -6px;
+    content: '\e814';
+    color: red;
+    line-height: 28px;
+}
+
+/* Make add to cart button gray when it's disabled */
+button.single_add_to_cart_button.disabled {
+    background-color: gray;
+}
+
+/* Woocommerce single product page is quite messed up and uses old float left and right, change it to use flexbox */
+.single-product div.product {
+    position: initial;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Hack: remove the woocommerce pager in the products page */
+.woocommerce-result-count {
+    display: none;
+}
+
+/* View Cart' button displayed at the bottom of the page in a fixed position */
+.bottom-view-cart-button {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    /* height: 50px; */
+    background-color: var(--main-bg-color);
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    /* vertical-align: middle; */
+    z-index: 1000;
+    padding: 10px 0;
+    transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 1;
+}
+/* hide the button when it has the 'hidden' class */
+.bottom-view-cart-button.hidden {
+    opacity: 0;
+}
+/* This element has a massive padding normally; if the class .reduced-padding is added, reduce it */
+.wp-block-group.alignfull.has-background.reduced-padding {
+    padding: 4rem;
+}
+/* .alignfull gives a big top margin to some elements; adding .reduced-margin will decrease it */
+.alignfull.decreased-margin {
+    margin-top: 2.5rem;
+}
+/* Style a file block like a button when the .as-button class is added to the wrapper */
+.wp-block-file.as-button a {
+    font-size: 1.7rem;
+    background-color: var(--main-bg-color);
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    line-height: 1.25;
+    letter-spacing: .0333em;
+    font-weight: 600;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.1em 1.44em;
+}
+
+/* Modify appearance of product name in WC Product Table */
+.wc-product-table td.col-name a {
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Cover image on a page only takes 2/3 of the window height */
+.cover-header {
+    height: 66vh;
+}
+.cover-header-inner-wrapper.screen-height {
+    min-height: 66vh;
+}
+.admin-bar .cover-header-inner-wrapper.screen-height {
+    min-height: calc(66vh-32px);
+}
+
+/* Remove certain items from the booking iframe */
+#table-booking-iframe header {
+    display: none;
+}
