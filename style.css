@@ -5,12 +5,17 @@ Description:    Twentytwenty child theme.
 Author:         Francesco Battaglini
 Author URI:     francesco@battaglini.net
 Template:       twentytwenty
-Version:        0.1.0.62
+Version:        0.1.0.120
 
 
 /* Declare global variables */
 :root {
-    --main-bg-color: #e22658;
+    --main-bg-color: #00244;
+}
+
+/* color of headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #002244;
 }
 
 /* Enables content like text paragraphs to extend to more of the page */
@@ -19,18 +24,25 @@ Version:        0.1.0.62
 }
 
 /* Default font face for .entry-content and a bunch of other things */
-.entry-content, .widget_text p, .widget_text ol, .widget_text ul, .widget_text dl, .widget_text dt, .widget-content .rssSummary {
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 300;
+body, .entry-content, .widget_text p {
+    font-family: Arial, Helvetica, sans-serif;
 }
+/* .entry-content, .widget_text p, .widget_text ol, .widget_text ul, .widget_text dl, .widget_text dt, .widget-content .rssSummary {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+} */
 .widget_text p, .widget_text ol, .widget_text ul, .widget_text dl, .widget_text dt, .widget-content .rssSummary {
     font-size: .8em;
 }
 
 /* Make text in p elements in .entry-content justified */
-.entry-content p {
+.entry-content p, .entry-content ul, .entry-content ol {
     text-align: justify;
 }
+/* center headings in entry content */
+.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
+    text-align: center;
+} 
 /* the first text paragraph in entry content needs a bit of padding on top */
 .entry-content > p:nth-of-type(1) {
     padding-top: 20px;
@@ -41,6 +53,9 @@ Version:        0.1.0.62
 }
 
 /* Add burgee and crest to the modal menu and the front page title respectively */
+.front-page-entry-title {
+    font-size: 3.3em;
+}
 .front-page-entry-title::before {
     display: block;
     margin: 0 auto;
@@ -65,12 +80,17 @@ Version:        0.1.0.62
     content: url('assets/svgs/rbyc-burgee-color.svg');
 }
 
+/* Hide something */
+.no-display {
+    display: none;
+}
+
 /* Style the under-cover menu */
 .under-cover-menu-wrapper {
     display: block;
     width: 100%;
     padding: 20px;
-    background-color: cornsilk;
+    background-color: #002244;
 }
 ul.under-cover-menu.primary-menu {
     justify-content: space-around;
@@ -90,12 +110,19 @@ ul.under-cover-menu.primary-menu {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white;
+}
+.under-cover-menu.primary-menu a:hover {
+    text-decoration: none;
 }
 /* Further styling of icons */
 .under-cover-menu [class^="rbyc-icon-"] a::before, .under-cover-menu [class*=" rbyc-icon-"] a::before {
-    padding-top: 18px;
+    padding: 6px 0 10px 0;
     margin-bottom: 0;
     width: 100%;
+}
+.under-cover-menu [class^="rbyc-icon-"] a::before, .under-cover-menu [class*=" rbyc-icon-"] a:hover::before {
+    text-decoration: none;
 }
 /* Items with . will get a 'New' icon on the top right */
 .under-cover-menu .rbyc-menu-item-new a::after {
@@ -184,6 +211,26 @@ button.single_add_to_cart_button.disabled {
     font-weight: bold;
 }
 
+/* site header in white */
+.overlay-header #site-header {
+    background-color: white;
+}
+.overlay-header .header-inner {
+    padding: 2rem 0;
+    color: #002244;
+}
+/* space the top menu items */
+.primary-menu li {
+    font-size: .7em;
+    text-transform: uppercase;
+    color: #002244;
+    margin: 1.5rem 0 0 1.6rem;
+    letter-spacing: .05px;
+}
+.primary-menu li .sub-menu, .primary-menu li .sub-menu::before {
+    background-color: white;
+}
+
 /* Cover image on a page only takes 2/3 of the window height */
 .cover-header {
     height: 66vh;
@@ -198,4 +245,53 @@ button.single_add_to_cart_button.disabled {
 /* Remove certain items from the booking iframe */
 #table-booking-iframe header {
     display: none;
+}
+
+/* Style product cover page same as a template cover page */
+body.single-product .entry-header {
+    background: transparent;
+}
+
+/* Reset look of checkbox inputs in product pages */
+.single-product form.cart input[type=checkbox] {
+    width: inherit;
+}
+
+/* style latest posts grid */
+.wp-block-latest-posts__featured-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.wp-block-latest-posts__post-excerpt {
+    font-size: .8em;
+}
+ul.wp-block-latest-posts.is-grid li {
+    border: 1px solid #002244;
+    padding: 10px 16px;
+    box-sizing: border-box;
+}
+.entry-content .wp-block-latest-posts > li:last-child {
+    margin-bottom: 20px;
+}
+
+/* Border radius on buttons */
+.wp-block-button .wp-block-button__link, .single_add_to_cart_button, .woocommerce-mini-cart__buttons a.button, .entry-content a.button, button#place_order {
+    border-radius: 15px;
+}
+
+/* add name next to logo */
+.site-logo {
+    display: flex;
+    align-items: center;
+}
+.site-logo::after {
+    content: 'Royal Brighton Yacht Club';
+    display: block;
+    padding-left: 12px;
+    color: #002244;
+}
+img.custom-logo {
+    object-fit: contain;
+    max-width: 120px;
 }

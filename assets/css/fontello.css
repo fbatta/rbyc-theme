@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'fontello';
-  src: url('../fonts/fontello.eot');
-  src: url('../fonts/fontello.eot#iefix') format('embedded-opentype'),
-       url('../fonts/fontello.woff2') format('woff2'),
-       url('../fonts/fontello.woff') format('woff'),
-       url('../fonts/fontello.ttf') format('truetype'),
-       url('../fonts/fontello.svg#fontello') format('svg');
+  src: url('../fonts/fontello.eot?4e637b15');
+  src: url('../fonts/fontello.eot#iefix?4e637b15') format('embedded-opentype'),
+       url('../fonts/fontello.woff2?4e637b15') format('woff2'),
+       url('../fonts/fontello.woff?4e637b15') format('woff'),
+       url('../fonts/fontello.ttf?4e637b15') format('truetype'),
+       url('../fonts/fontello.svg?4e637b15#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -91,6 +91,8 @@
 .rbyc-icon-rya a::before { content: '\e81b'; } /* '' */
 .rbyc-icon-rs-boat a::before { content: '\e81c'; } /* '' */
 .rbyc-icon-coronavirus a::before { content: '\e826'; } /* '' */
+.rbyc-icon-brochure a::before { content: '\e827'; } /* '' */
+.rbyc-icon-history-book a::before { content: '\e828'; } /* '' */
 .rbyc-icon-policies a::before { content: '\e82b'; } /* '' */
 .rbyc-icon-restaurant a::before { content: '\e832'; } /* '' */
 .rbyc-icon-swimming a::before { content: '\e838'; } /* '' */

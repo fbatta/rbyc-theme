@@ -1,0 +1,13 @@
+.tribe-events-schedule {
+    display: none;
+}
+
+#tribe-events-pg-template, .tribe-events-pg-template {
+    max-width: initial;
+}
+
+.tribe-events-pg-template #post-inner.post-inner, .tribe-events-pg-template #tribe-events-footer {
+    padding-top: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
