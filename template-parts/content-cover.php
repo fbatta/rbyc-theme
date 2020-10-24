@@ -86,14 +86,16 @@
 						if (is_page()) {
 						?>
 
-							<div class="to-the-content-wrapper">
+							<!-- <div class="to-the-content-wrapper">
 
 								<a href="#post-inner" class="to-the-content fill-children-current-color">
-									<?php twentytwenty_the_theme_svg('arrow-down'); ?>
-									<div class="screen-reader-text"><?php _e('Scroll Down', 'twentytwenty'); ?></div>
-								</a><!-- .to-the-content -->
+									<?php //twentytwenty_the_theme_svg('arrow-down'); 
+									?>
+									<div class="screen-reader-text"><?php //_e('Scroll Down', 'twentytwenty'); 
+																	?></div>
+								</a>
 
-							</div><!-- .to-the-content-wrapper -->
+							</div> -->
 
 							<?php
 						} else {
@@ -151,7 +153,45 @@
 		}
 		?>
 
-		<div class="entry-content" style="margin-top: 16px">
+		<?php
+		if (is_front_page()) { ?>
+			<nav class="rbyc-home-page-menu" aria-label="home page menu" role="navigation">
+				<div class="rbyc_home-page-menu__column">
+					<h5>Sailing</h5>
+					<div class="rbyc_home-page-menu__subrow">
+						<a href="https://rbyc.org.au/sailing/racing/" class="page-link">Entries & Results</a>
+						<a href="https://rbyc.org.au/training/" class="page-link">Learn to sail</a>
+						<a href="https://rbyc.org.au/sailing/sailing-documents/" class="page-link">Documentation</a>
+					</div>
+				</div>
+				<div class="rbyc_home-page-menu__column">
+					<h5>Marina</h5>
+					<div class="rbyc_home-page-menu__subrow">
+						<a href="https://rbyc.org.au/marina/fees/" class="page-link">Fees</a>
+						<a href="https://rbyc.org.au/marina/casual-berthing-enquiry/" class="page-link">Casual berthing</a>
+						<a href="https://rbyc.org.au/marina/marina-enquire/" class="page-link">Enquire</a>
+					</div>
+				</div>
+				<div class="rbyc_home-page-menu__column">
+					<h5>Restaurant & Events</h5>
+					<div class="rbyc_home-page-menu__subrow">
+						<a href="https://rbyc.org.au/whats-on/" class="page-link">What's On</a>
+						<a href="https://rbyc.org.au/restaurant/" class="page-link">Bar & Dining</a>
+						<a href="https://rbyc.org.au/functions-and-events/" class="page-link">Functions</a>
+					</div>
+				</div>
+				<div class="rbyc_home-page-menu__column">
+					<h5>Membership</h5>
+					<div class="rbyc_home-page-menu__subrow">
+						<a href="https://rbyc.org.au/join-now/" class="page-link">Join now!</a>
+						<a href="https://rbyc.org.au/club/membership/" class="page-link">Benefits</a>
+						<a href="https://rbyc.thymesoft.net/" target="_blank" rel="noreferrer noopener" class="page-link">Member Portal</a>
+					</div>
+				</div>
+			</nav>
+		<?php } ?>
+
+		<div class="entry-content" style="margin-top: 24px">
 
 			<?php
 			the_content();

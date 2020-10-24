@@ -5,17 +5,19 @@ Description:    Twentytwenty child theme.
 Author:         Francesco Battaglini
 Author URI:     francesco@battaglini.net
 Template:       twentytwenty
-Version:        0.1.0.120
+Version:        0.1.0.10
 
 
 /* Declare global variables */
 :root {
-    --main-bg-color: #00244;
+    --main-bg-color: #6c7277;
 }
 
 /* color of headings */
 h1, h2, h3, h4, h5, h6 {
     color: #002244;
+    font-weight: normal;
+    text-transform: uppercase;
 }
 
 /* Enables content like text paragraphs to extend to more of the page */
@@ -24,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Default font face for .entry-content and a bunch of other things */
-body, .entry-content, .widget_text p {
+body, .entry-content, .widget_text p, input {
     font-family: Arial, Helvetica, sans-serif;
 }
 /* .entry-content, .widget_text p, .widget_text ol, .widget_text ul, .widget_text dl, .widget_text dt, .widget-content .rssSummary {
@@ -53,9 +55,6 @@ body, .entry-content, .widget_text p {
 }
 
 /* Add burgee and crest to the modal menu and the front page title respectively */
-.front-page-entry-title {
-    font-size: 3.3em;
-}
 .front-page-entry-title::before {
     display: block;
     margin: 0 auto;
@@ -63,11 +62,17 @@ body, .entry-content, .widget_text p {
     content: url('assets/svgs/rbyc-crest-color.svg');
 }
 @media (min-width: 768px) {
+    .front-page-entry-title {
+        font-size: 3em;
+    }
     .front-page-entry-title::before {
         width: 90px;
     }
 }
 @media (min-width: 1280px) {
+    .front-page-entry-title {
+        font-size: 3.3em;
+    }
     .front-page-entry-title::before {
         width: 105px;
     }
@@ -227,19 +232,28 @@ button.single_add_to_cart_button.disabled {
     margin: 1.5rem 0 0 1.6rem;
     letter-spacing: .05px;
 }
-.primary-menu li .sub-menu, .primary-menu li .sub-menu::before {
+.primary-menu li .sub-menu, .primary-menu li .sub-menu::before, body:not(.overlay-header) .primary-menu ul.sub-menu {
     background-color: white;
 }
 
 /* Cover image on a page only takes 2/3 of the window height */
 .cover-header {
-    height: 66vh;
+    height: 70vh;
 }
 .cover-header-inner-wrapper.screen-height {
-    min-height: 66vh;
+    min-height: 70vh;
 }
 .admin-bar .cover-header-inner-wrapper.screen-height {
-    min-height: calc(66vh-32px);
+    min-height: calc(70vh-32px);
+}
+@media (min-width: 700px) {
+    .cover-header-inner {
+        padding: 23rem 0 3rem 0;
+    }
+}
+/* placement of cover template background image */
+.bg-image {
+    background-position: 50% 80%;
 }
 
 /* Remove certain items from the booking iframe */
@@ -258,6 +272,9 @@ body.single-product .entry-header {
 }
 
 /* style latest posts grid */
+.wp-block-latest-posts__featured-image.aligncenter {
+    margin-top: 8px;
+}
 .wp-block-latest-posts__featured-image img {
     width: 100%;
     height: 200px;
@@ -268,9 +285,13 @@ body.single-product .entry-header {
 }
 ul.wp-block-latest-posts.is-grid li {
     border: 1px solid #002244;
-    padding: 10px 16px;
     box-sizing: border-box;
 }
+ul.wp-block-latest-posts.is-grid li > *:not(.wp-block-latest-posts__featured-image) {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/* for some reason the last child has a different margin */
 .entry-content .wp-block-latest-posts > li:last-child {
     margin-bottom: 20px;
 }
@@ -294,4 +315,148 @@ ul.wp-block-latest-posts.is-grid li {
 img.custom-logo {
     object-fit: contain;
     max-width: 120px;
+}
+
+/* style ultimate addons teams block */
+.entry-content .uagb-team__title, .entry-content .wp-block-columns .uagb-team__title {
+    margin: 5px 0;
+}
+.entry-content .uagb-team__desc, .entry-content .wp-block-columns .uagb-team__desc {
+    text-align: center;
+}
+
+/* Stlye ninja forms */
+/* next/previous buttons */
+input.nf-next, input.nf-previous {
+    border-radius: 15px;
+}
+/* text fields */
+.nf-form-content .nf-field-element .ninja-forms-field:not(select) {
+    padding: 5px;
+}
+/* vefore form fields */
+.nf-before-form-content {
+    margin-bottom: 16px;
+    font-size: .7em;
+}
+/* labels */
+.nf-field-label label {
+    font-size: .7em;
+}
+/* button */
+.nf-form-content .nf-field-element .nf-element[type="button"] {
+    padding: 16px;
+    border-radius: 15px;
+}
+@media (min-width: 768px) {
+    .label-above .field-wrap, .label-below .field-wrap {
+        align-items: center;
+    }
+    .label-above .nf-field-label {
+        width: 200px;
+        margin-bottom: 0 !important;
+    }
+    .label-above .nf-field-element, .label-below .nf-field-element {
+        flex: 1;
+        width: initial !important;
+        margin-left: 10px !important;
+    }
+}
+
+/* home page menu */
+.rbyc-home-page-menu {
+    text-align: center;
+    color: white;
+    background: #002244;
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 0;
+}
+.rbyc_home-page-menu__column {
+    padding: 0 10px;
+    border-right: 1px solid white;
+    flex: 1;
+}
+.rbyc_home-page-menu__column:last-child {
+    border-right: 0;
+}
+.rbyc_home-page-menu__column h5 {
+    color: white;
+    margin: 0 0 15px 0;
+}
+.rbyc_home-page-menu__subrow {
+    display: flex;
+    justify-content: center;
+}
+.rbyc_home-page-menu__subrow .page-link {
+    color: #FECB00;
+    text-decoration: none;
+    padding: 0 10px;
+    border-right: 1px solid #FECB00;
+    font-size: .7em;
+    text-transform: uppercase;
+
+}
+.rbyc_home-page-menu__subrow .page-link:last-child {
+    border-right: 0;
+}
+@media (max-width: 768px) {
+    .rbyc-home-page-menu {
+        flex-direction: column;
+        padding: 0;
+    }
+    .rbyc_home-page-menu__column {
+        border-right: 0;
+        padding: 10px 0;
+        border-top: 1px solid #888;
+    }
+}
+
+/* whatson block */
+.rbyc-whatson-wrapper {
+    width: 100%;
+    border: 1px solid var(--main-bg-color);
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    margin: 10px 0;
+}
+.rbyc-whatson__featured-image {
+    margin-right: 24px;
+}
+.rbyc-whatson__featured-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+.rbyc-whatson__description {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+.rbyc-whatson__description > h3 {
+    margin: 8px 0;
+}
+.rbyc-whatson__description p:not(.event-date) {
+    font-size: .8em;
+}
+@media (max-width: 768px) {
+    .rbyc-whatson__description p:not(.event-date) {
+        font-size: .6em;
+    }
+    .rbyc-whatson__description .event-date {
+        font-size: 1em;
+    }
+}
+@media (max-width: 480px) {
+    .rbyc-whatson-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .rbyc-whatson__featured-image {
+        margin: 0 0 20px 0;
+    }
 }
