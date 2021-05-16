@@ -5,7 +5,7 @@ Description:    Twentytwenty child theme.
 Author:         Francesco Battaglini
 Author URI:     francesco@battaglini.net
 Template:       twentytwenty
-Version:        0.1.0.11
+Version:        0.1.0.1
 
 
 /* Declare global variables */
@@ -287,6 +287,9 @@ ul.wp-block-latest-posts.is-grid li {
     border: 1px solid #002244;
     box-sizing: border-box;
 }
+ul.wp-block-latest-posts.is-grid li > a {
+    display: block;
+}
 ul.wp-block-latest-posts.is-grid li > *:not(.wp-block-latest-posts__featured-image) {
     padding-left: 10px;
     padding-right: 10px;
@@ -443,6 +446,14 @@ input.nf-next, input.nf-previous {
 .rbyc-whatson__description p:not(.event-date) {
     font-size: .8em;
 }
+.regattas-quick-link {
+    padding-right: 5px;
+    border-right: 1px solid black;
+}
+.regattas-quick-link:last-child {
+    padding-right: 0;
+    border-right: none;
+}
 @media (max-width: 768px) {
     .rbyc-whatson__description p:not(.event-date) {
         font-size: .6em;
@@ -458,5 +469,48 @@ input.nf-next, input.nf-previous {
     }
     .rbyc-whatson__featured-image {
         margin: 0 0 20px 0;
+    }
+}
+
+/* cover header in event page */
+.cover-header.rbyc-event-cover-header {
+    flex-direction: row;
+    background: #002244;
+}
+.cover-header.rbyc-event-cover-header img {
+    max-width: 50%;
+    height: 100% !important;
+    object-fit: cover;
+}
+.rbyc-event-cover-header > .cover-header-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.rbyc-event-cover-header > .cover-header-inner, .rbyc-event-cover-header > .cover-header-inner > .entry-header {
+    padding: 0;
+}
+@media (max-width: 768px) {
+    #tribe-events-pg-template {
+        padding: 0;
+    }
+    #tribe-events-pg-template article div:not(.rbyc-event-cover-header) {
+        padding: 0 10px;
+    }
+    .cover-header.rbyc-event-cover-header {
+        flex-direction: column;
+        height: auto;
+    }
+    .cover-header.rbyc-event-cover-header img {
+        width: 100%;
+    }
+    .cover-header.rbyc-event-cover-header .cover-header-inner {
+        padding: 0 10px;
+    }
+    .cover-header.rbyc-event-cover-header .entry-header {
+        padding: 2rem 0;
+    }
+    .cover-header.rbyc-event-cover-header .entry-header-inner h4 {
+        margin: 1rem 0 0 0;
     }
 }
